@@ -1,0 +1,73 @@
+baseURL = "https://example.com"
+languageCode = "en-us"
+defaultContentLanguage = "en"
+title = "Cactus Plus Theme Demo"
+theme = "cactus-plus"
+
+# Main menu
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
+
+[[menu.main]]
+name = "Posts"
+url = "/posts"
+weight = 2
+
+[[menu.main]]
+name = "Books"
+url = "/books"
+weight = 3
+
+# [[menu.main]]
+# name = "Tags"
+# url = "/tags"
+# weight = 4
+
+[[menu.main]]
+name = "About"
+url = "/about"
+weight = 5
+
+# Markdown configuration
+[markup]
+  [markup.tableOfContents]
+    endLevel = 4
+    ordered = false
+    startLevel = 2
+
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = false
+    lineNos = true
+    style = "dracula"
+
+# Parameters
+[params]
+  colortheme = "white"  # Options: dark, white
+  rss = true
+  mainSection = "posts"
+
+  # Homepage settings
+  description = "A demo site for the Cactus Plus Hugo theme, showcasing its features."
+  postsOnHomePage = 5
+
+  # Post settings
+  showReadTime = true
+  dateFormat = "2006-01-02"
+
+  # Comments system (optional)
+  [params.comments]
+    enabled = false  # Disabled by default
+
+  # Books configuration
+  [params.books]
+    booksPerPage = 20  # Number of books per page
+    showRating = true
+    showReadingTime = true
+
+  # Social links (optional)
+  [[params.social]]
+    name = "github"
+    link = "https://github.com/your-username"

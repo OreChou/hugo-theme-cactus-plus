@@ -1,0 +1,65 @@
+- id: pagination.pageOf
+  translation: "Страница {{ .PageNumber }} из {{ .TotalPages }}"
+
+- id: pagination.previous
+  translation: "Предыдущая страница"
+
+- id: pagination.next
+  translation: "Следующая страница"
+
+- id: nav.previous
+  translation: "Назад"
+
+- id: nav.next
+  translation: "Вперёд"
+
+- id: nav.previousPost
+  translation: "Предыдущий пост"
+
+- id: nav.nextPost
+  translation: "Следующий пост"
+
+- id: nav.topOfPage
+  translation: "В начало страницы"
+
+- id: nav.backToTop
+  translation: "Вернуться наверх"
+
+- id: nav.sharePost
+  translation: "Поделиться постом"
+
+- id: nav.menu
+  translation: "Меню"
+
+- id: nav.toc
+  translation: "Содержание"
+
+- id: nav.share
+  translation: "Поделиться"
+
+- id: nav.top
+  translation: "Наверх"
+
+- id: book.author
+  translation: "Автор："
+
+- id: book.dateFinished
+  translation: "Завершено："
+
+- id: book.readingTime
+  translation: "Время чтения："
+
+- id: book.doubanLink
+  translation: "Douban"
+
+- id: book.neodbLink
+  translation: "NeoDB"
+
+- id: book.review
+  translation: "Обзор"
+
+- id: code.copy
+  translation: "Копировать"
+
+- id: code.copied
+  translation: "Скопировано!"

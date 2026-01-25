@@ -1,0 +1,65 @@
+- id: pagination.pageOf
+  translation: "페이지 {{ .PageNumber }} / 전체 {{ .TotalPages }} 페이지"
+
+- id: pagination.previous
+  translation: "이전 페이지"
+
+- id: pagination.next
+  translation: "다음 페이지"
+
+- id: nav.previous
+  translation: "이전"
+
+- id: nav.next
+  translation: "다음"
+
+- id: nav.previousPost
+  translation: "이전 글"
+
+- id: nav.nextPost
+  translation: "다음 글"
+
+- id: nav.topOfPage
+  translation: "페이지 상단으로"
+
+- id: nav.backToTop
+  translation: "맨 위로"
+
+- id: nav.sharePost
+  translation: "글 공유"
+
+- id: nav.menu
+  translation: "메뉴"
+
+- id: nav.toc
+  translation: "목차"
+
+- id: nav.share
+  translation: "공유"
+
+- id: nav.top
+  translation: "상단"
+
+- id: book.author
+  translation: "저자："
+
+- id: book.dateFinished
+  translation: "완료 시간："
+
+- id: book.readingTime
+  translation: "독서 시간："
+
+- id: book.doubanLink
+  translation: "Douban"
+
+- id: book.neodbLink
+  translation: "NeoDB"
+
+- id: book.review
+  translation: "서평"
+
+- id: code.copy
+  translation: "복사"
+
+- id: code.copied
+  translation: "복사됨!"

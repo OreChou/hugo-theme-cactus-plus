@@ -1,0 +1,167 @@
+// Theme toggle button styles
+.theme-switcher {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 1000;
+}
+
+// iOS-style toggle switch
+.theme-toggle-switch {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+
+  // Hide the checkbox input
+  input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  // The switch track
+  .switch-track {
+    position: relative;
+    width: 50px;
+    height: 26px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 26px;
+    transition: background-color 0.3s ease;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2),
+                0 1px 2px rgba(0, 0, 0, 0.05);
+
+    // The switch thumb (slider)
+    .switch-thumb {
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 22px;
+      height: 22px;
+      background-color: white;
+      border-radius: 50%;
+      transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
+                  0 1px 2px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      line-height: 1;
+    }
+  }
+
+  // Checked state (dark mode)
+  input:checked ~ .switch-track {
+    background-color: var(--color-accent-1, #2bbc8a);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1),
+                0 1px 2px rgba(43, 188, 138, 0.2);
+  }
+
+  input:checked ~ .switch-track .switch-thumb {
+    transform: translateX(24px);
+  }
+
+  // Focus state for accessibility
+  input:focus-visible ~ .switch-track {
+    outline: 2px solid var(--color-accent-1, #2bbc8a);
+    outline-offset: 3px;
+  }
+
+  // Hover effect
+  &:hover .switch-track {
+    background-color: rgba(0, 0, 0, 0.25);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.25),
+                0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  input:checked ~ .switch-track:hover,
+  &:hover input:checked ~ .switch-track {
+    background-color: var(--color-accent-1, #2bbc8a);
+    filter: brightness(1.05);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1),
+                0 2px 8px rgba(43, 188, 138, 0.3);
+  }
+
+  // Active/clicking state
+  &:active .switch-thumb {
+    width: 27px;
+  }
+
+  // Label tooltip
+  &::after {
+    content: 'Theme';
+    position: absolute;
+    bottom: 100%;
+    right: 0;
+    margin-bottom: 8px;
+    padding: 4px 8px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    font-size: 12px;
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
+}
+
+// Dark mode specific styles
+html.theme-dark .theme-toggle-switch .switch-track,
+.theme-dark .theme-toggle-switch .switch-track {
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3),
+              0 1px 2px rgba(255, 255, 255, 0.05);
+
+  .switch-thumb {
+    background-color: #2d2f31;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4),
+                0 1px 2px rgba(0, 0, 0, 0.2);
+  }
+}
+
+html.theme-dark .theme-toggle-switch:hover .switch-track,
+.theme-dark .theme-toggle-switch:hover .switch-track {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+html.theme-dark .theme-toggle-switch::after,
+.theme-dark .theme-toggle-switch::after {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #1d1f21;
+}
+
+// Mobile responsiveness
+@media screen and (max-width: 480px) {
+  .theme-switcher {
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .theme-toggle-switch .switch-track {
+    width: 46px;
+    height: 24px;
+
+    .switch-thumb {
+      width: 20px;
+      height: 20px;
+      font-size: 11px;
+    }
+  }
+
+  .theme-toggle-switch input:checked ~ .switch-track .switch-thumb {
+    transform: translateX(22px);
+  }
+
+  .theme-toggle-switch::after {
+    display: none;
+  }
+}

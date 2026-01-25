@@ -1,0 +1,65 @@
+- id: pagination.pageOf
+  translation: "{{ .TotalPages }}ページ中{{ .PageNumber }}ページ"
+
+- id: pagination.previous
+  translation: "前のページ"
+
+- id: pagination.next
+  translation: "次のページ"
+
+- id: nav.previous
+  translation: "前へ"
+
+- id: nav.next
+  translation: "次へ"
+
+- id: nav.previousPost
+  translation: "前の記事"
+
+- id: nav.nextPost
+  translation: "次の記事"
+
+- id: nav.topOfPage
+  translation: "ページの上部へ"
+
+- id: nav.backToTop
+  translation: "トップに戻る"
+
+- id: nav.sharePost
+  translation: "記事を共有"
+
+- id: nav.menu
+  translation: "メニュー"
+
+- id: nav.toc
+  translation: "目次"
+
+- id: nav.share
+  translation: "共有"
+
+- id: nav.top
+  translation: "トップ"
+
+- id: book.author
+  translation: "著者："
+
+- id: book.dateFinished
+  translation: "読了日："
+
+- id: book.readingTime
+  translation: "読書時間："
+
+- id: book.doubanLink
+  translation: "Douban"
+
+- id: book.neodbLink
+  translation: "NeoDB"
+
+- id: book.review
+  translation: "書評"
+
+- id: code.copy
+  translation: "コピー"
+
+- id: code.copied
+  translation: "コピーしました！"

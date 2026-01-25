@@ -1,0 +1,65 @@
+- id: pagination.pageOf
+  translation: "Seite {{ .PageNumber }} von {{ .TotalPages }}"
+
+- id: pagination.previous
+  translation: "Vorherige Seite"
+
+- id: pagination.next
+  translation: "Nächste Seite"
+
+- id: nav.previous
+  translation: "Zurück"
+
+- id: nav.next
+  translation: "Weiter"
+
+- id: nav.previousPost
+  translation: "Vorheriger Beitrag"
+
+- id: nav.nextPost
+  translation: "Nächster Beitrag"
+
+- id: nav.topOfPage
+  translation: "Zum Seitenanfang"
+
+- id: nav.backToTop
+  translation: "Zurück nach oben"
+
+- id: nav.sharePost
+  translation: "Beitrag teilen"
+
+- id: nav.menu
+  translation: "Menü"
+
+- id: nav.toc
+  translation: "Inhalt"
+
+- id: nav.share
+  translation: "Teilen"
+
+- id: nav.top
+  translation: "Oben"
+
+- id: book.author
+  translation: "Autor:"
+
+- id: book.dateFinished
+  translation: "Abgeschlossen:"
+
+- id: book.readingTime
+  translation: "Lesezeit:"
+
+- id: book.doubanLink
+  translation: "Douban"
+
+- id: book.neodbLink
+  translation: "NeoDB"
+
+- id: book.review
+  translation: "Rezension"
+
+- id: code.copy
+  translation: "Kopieren"
+
+- id: code.copied
+  translation: "Kopiert!"

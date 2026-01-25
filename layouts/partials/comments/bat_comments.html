@@ -1,0 +1,11 @@
+<div id="bat-comments-thread">
+  <script>
+  initComments({
+    node: document.getElementById("bat-comments-thread"),
+    defaultHomeserverUrl: '{{ default "https://matrix.cactus.chat:8448" .Site.Params.Comments.Batcomments.ServerUrl }}',
+    serverName: '{{ default "cactus.chat" .Site.Params.Comments.Batcomments.ServerName }}',
+    siteName: "{{ .Site.Params.Comments.Batcomments.SiteName }}",
+    commentSectionId: "{{ .RelPermalink }}"
+  })
+</script>
+</div>

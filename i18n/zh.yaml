@@ -1,0 +1,65 @@
+- id: pagination.pageOf
+  translation: "第 {{ .PageNumber }} 页 / 共 {{ .TotalPages }} 页"
+
+- id: pagination.previous
+  translation: "上一页"
+
+- id: pagination.next
+  translation: "下一页"
+
+- id: nav.previous
+  translation: "上一页"
+
+- id: nav.next
+  translation: "下一页"
+
+- id: nav.previousPost
+  translation: "上一篇"
+
+- id: nav.nextPost
+  translation: "下一篇"
+
+- id: nav.topOfPage
+  translation: "返回顶部"
+
+- id: nav.backToTop
+  translation: "返回顶部"
+
+- id: nav.sharePost
+  translation: "分享文章"
+
+- id: nav.menu
+  translation: "菜单"
+
+- id: nav.toc
+  translation: "目录"
+
+- id: nav.share
+  translation: "分享"
+
+- id: nav.top
+  translation: "顶部"
+
+- id: book.author
+  translation: "作者："
+
+- id: book.dateFinished
+  translation: "完成时间："
+
+- id: book.readingTime
+  translation: "阅读时长："
+
+- id: book.doubanLink
+  translation: "豆瓣链接"
+
+- id: book.neodbLink
+  translation: "NeoDB 链接"
+
+- id: book.review
+  translation: "书评"
+
+- id: code.copy
+  translation: "复制"
+
+- id: code.copied
+  translation: "已复制！"

@@ -1,0 +1,109 @@
+.post-list {
+  padding: 0;
+
+  .post-item {
+    margin-bottom: 1rem;
+    margin-left: 0;
+    list-style-type: none;
+
+    .meta {
+      display: block;
+      margin-right: 16px;
+      min-width: 100px;
+      color: $color-meta;
+      font-size: 14px;
+    }
+  }
+}
+@media (min-width: 480px) {
+  .post-list {
+    .post-item {
+      display: flex;
+      margin-bottom: 5px;
+
+      .meta {
+        text-align: left;
+      }
+    }
+  }
+}
+.project-list {
+  padding: 0;
+  list-style: none;
+
+  .project-item {
+    margin-bottom: 5px;
+    p {
+      display: inline;
+    }
+  }
+}
+
+// Projects Section
+#projects {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .project-item {
+    padding: 1.5rem;
+    border: 2px solid transparent;
+    background: linear-gradient(var(--color-background), var(--color-background)) padding-box,
+                linear-gradient(135deg, rgba(212, 128, 170, 0.3), rgba(43, 188, 138, 0.2)) border-box;
+    border-radius: 12px;
+    text-align: center;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-4px);
+      background: linear-gradient(var(--color-background), var(--color-background)) padding-box,
+                  linear-gradient(135deg, rgba(212, 128, 170, 0.6), rgba(43, 188, 138, 0.5)) border-box;
+      box-shadow: 0 8px 24px rgba(212, 128, 170, 0.15);
+    }
+  }
+
+  .project-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .project-item h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+
+    a {
+      color: var(--color-accent-1);
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .project-item p {
+    margin: 0;
+    color: var(--color-text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+}
+
+@media (min-width: 480px) {
+  #projects .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  #projects .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

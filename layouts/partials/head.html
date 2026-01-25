@@ -1,0 +1,85 @@
+<head>
+  <!-- Resource Hints -->
+  <link rel="dns-prefetch" href="https://latest.cactus.chat">
+  <link rel="preconnect" href="https://latest.cactus.chat" crossorigin>
+
+  <!-- Font Preloads -->
+  <link rel="preload" href="{{ "lib/font-awesome/webfonts/fa-brands-400.woff2" | relURL }}" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="{{ "lib/font-awesome/webfonts/fa-regular-400.woff2" | relURL }}" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="{{ "lib/font-awesome/webfonts/fa-solid-900.woff2" | relURL }}" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="{{ "lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" | relURL }}" as="font" type="font/woff2" crossorigin="anonymous">
+  {{ if eq .Site.Params.Comments.enabled true }}
+  <script type="text/javascript" src="https://latest.cactus.chat/cactus.js" defer></script>
+  <link rel="stylesheet" href="https://latest.cactus.chat/style.css" type="text/css">
+  {{ end }}
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>{{ if .IsPage }} {{ .Title }} | {{ end }}{{ .Site.Title }}</title>
+  <link rel = 'canonical' href = '{{ .Permalink }}'>
+  {{ with .Site.Params.description }}<meta name="description" content="{{ . }}">{{ end }}
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  {{ template "_internal/opengraph.html" . }}
+  {{ template "_internal/twitter_cards.html" . }}
+  {{ .Scratch.Set "colortheme" "white"}}
+  {{ if .Site.Params.colortheme }}
+    {{ .Scratch.Set "colortheme" .Site.Params.colortheme }}
+  {{ end }}
+  {{ $colortheme := .Scratch.Get "colortheme" }}
+
+  {{- $options := (dict "targetPath" "css/styles.css" "outputStyle" "compressed" "enableSourceMap" "true") -}}
+  {{- $styles := resources.Get "scss/style.scss" | resources.ExecuteAsTemplate "scss/style.scss" . | css.Sass $options | resources.Fingerprint "sha512" }}
+  <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}"> 
+
+  <!-- Custom CSS -->
+  {{ range .Site.Params.css }} <link rel="stylesheet" href="{{ . | absURL }}"> {{ end }}
+  {{ `
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  ` | safeHTML }}
+
+  {{ partial "favicon.html" . }}
+  {{ if .Site.Params.rss }}
+  {{ with .OutputFormats.Get "RSS" }}
+    {{ printf `<link href="%s" rel="%s" type="%s" title="%s" />` .Permalink .Rel .MediaType.Type $.Site.Title | safeHTML }}
+  {{ end }}
+  {{ end }}
+  {{ $gaID := .Site.Config.Services.GoogleAnalytics.ID }}
+  {{ if $gaID }}
+    {{ template "_internal/google_analytics.html" . }}
+  {{ end }}
+
+  <!-- Theme script - apply immediately to prevent flash -->
+  <script>
+    (function() {
+      try {
+        // Get saved theme or detect system theme
+        var savedTheme = localStorage.getItem('theme');
+        var systemTheme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        var theme = savedTheme || systemTheme;
+
+        // Map old themes to new ones
+        if (theme === 'white' || theme === 'classic') {
+          theme = 'light';
+          localStorage.setItem('theme', theme);
+        }
+
+        // Apply theme class immediately
+        if (theme && theme !== 'default') {
+          document.documentElement.classList.add('theme-' + theme);
+        }
+      } catch (e) {
+        // Silent fail if localStorage is not available
+      }
+    })();
+  </script>
+
+  <!-- i18n data attributes for JavaScript -->
+  <script>
+    document.documentElement.dataset.copyLabel = {{ i18n "code.copy" | default "Copy" }};
+    document.documentElement.dataset.copiedLabel = {{ i18n "code.copied" | default "Copied!" }};
+  </script>
+</head>

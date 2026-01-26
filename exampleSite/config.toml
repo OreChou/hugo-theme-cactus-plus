@@ -30,6 +30,10 @@ name = "About"
 url = "/about"
 weight = 5
 
+# Pagination
+[pagination]
+  pagerSize = 3
+
 # Markdown configuration
 [markup]
   [markup.tableOfContents]

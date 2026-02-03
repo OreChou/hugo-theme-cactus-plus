@@ -1,22 +1,52 @@
+{{ $rating := .Params.rating | default 0 }}
+{{ $dateFinished := .Params.dateFinished }}
+{{ if $dateFinished }}
+  {{ $dateFinished = time $dateFinished }}
+{{ end }}
+
 <div class="book-card">
-  <div class="book-cover">
+  <a href="{{ .Permalink }}" class="book-card-link"></a>
+
+  <div class="book-card-cover">
     {{ if .Params.cover }}
-      <a href="{{ .Permalink }}">
-        <img src="{{ .Params.cover }}" alt="{{ .Title }}" loading="lazy" decoding="async">
-      </a>
+    <img src="{{ .Params.cover }}" alt="{{ .Title }}" loading="lazy" decoding="async">
     {{ else }}
-      <div class="book-cover-placeholder">📖</div>
+    <div class="cover-placeholder">📖</div>
     {{ end }}
   </div>
-  <div class="book-info">
-    <h3 class="book-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
-    <p class="book-author">{{ .Params.author }}</p>
-    <div class="book-rating">{{ partial "stars.html" .Params.rating }}</div>
-    <div class="book-meta">
-      <span class="book-date">📅 {{ .Params.dateFinished | default .Date | time.Format (.Site.Params.dateFormat | default "2006-01-02") }}</span>
+
+  <div class="book-card-content">
+    <h3 class="book-card-title">{{ .Title }}</h3>
+
+    <div class="book-card-rating">
+      <span class="rating-label">个人评分：</span>
+      <div class="stars">
+        <span class="star{{ if ge $rating 1 }} filled{{ end }}">★</span>
+        <span class="star{{ if ge $rating 2 }} filled{{ end }}">★</span>
+        <span class="star{{ if ge $rating 3 }} filled{{ end }}">★</span>
+        <span class="star{{ if ge $rating 4 }} filled{{ end }}">★</span>
+        <span class="star{{ if ge $rating 5 }} filled{{ end }}">★</span>
+      </div>
+    </div>
+
+    {{ if .Params.summary }}
+    <p class="book-card-summary">{{ .Params.summary }}</p>
+    {{ else }}
+    <p class="book-card-summary">{{ .Summary }}</p>
+    {{ end }}
+
+    <div class="book-card-meta">
+      {{ if .Params.author }}
+      <span class="meta-item">{{ .Params.author }}</span>
+      {{ end }}
+      {{ if $dateFinished }}
+      <span class="meta-item">{{ $dateFinished.Format "2006-01" }}</span>
+      {{ end }}
       {{ with .Params.readingTime }}
-        <span class="book-duration">📖 {{ . }}</span>
+      <span class="meta-item">{{ . }}</span>
       {{ end }}
     </div>
   </div>
+
+  <div class="book-card-type">BOOK</div>
 </div>

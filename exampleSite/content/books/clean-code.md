@@ -5,6 +5,7 @@ cover: "https://neodb.social/m/book/2021/09/16bcda88bd-7094-4e74-9270-ca665c95b8
 rating: 5
 dateFinished: 2025-12-20
 readingTime: "2 weeks"
+summary: "A handbook of agile software craftsmanship. Learn how to write code that's easy to understand and maintain through meaningful names, short functions, and proper error handling."
 tags: ["programming", "technical"]
 ---
 

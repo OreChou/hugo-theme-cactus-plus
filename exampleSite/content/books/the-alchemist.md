@@ -5,6 +5,7 @@ cover: "https://neodb.social/m/book/2021/12/040491a923-ee6e-4ca5-a6e3-c6177c9097
 rating: 5
 dateFinished: 2026-01-15
 readingTime: "3 days"
+summary: "A magical story about following your dreams. Santiago's journey teaches us that when you truly desire something, the entire universe conspires to help you achieve it."
 doubanId: "1770782"
 tags: ["fiction", "philosophy"]
 ---

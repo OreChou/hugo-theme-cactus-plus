@@ -5,6 +5,7 @@ cover: "https://neodb.social/m/book/2021/09/16b54ff245-74bb-4307-be52-1eba93c7af
 rating: 4
 dateFinished: 2025-11-10
 readingTime: "5 days"
+summary: "An easy & proven way to build good habits & break bad ones. The 1% improvement rule can transform your life—small changes lead to remarkable results."
 tags: ["self-help", "psychology"]
 ---
 

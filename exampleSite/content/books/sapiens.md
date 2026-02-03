@@ -5,6 +5,7 @@ cover: "https://neodb.social/m/book/2022/04/149320198e-50ae-4def-8548-dfa88f7014
 rating: 5
 dateFinished: 2025-10-05
 readingTime: "1 week"
+summary: "From the Cognitive Revolution to the present, explore how Homo sapiens came to dominate the planet. A thought-provoking examination of human history through the lens of shared beliefs and myths."
 tags: ["history", "science"]
 ---
 

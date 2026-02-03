@@ -1,7 +1,10 @@
 {{ define "main" }}
 <div id="books">
-  <span class="h1">Books</span>
-  <div class="books-grid">
+  <div class="books-header">
+    <h1>Books</h1>
+    <p class="books-subtitle">读书笔记与书评</p>
+  </div>
+  <div class="books-list">
     {{ range .Paginator.Pages }}
       {{ partial "book-card.html" . }}
     {{ end }}

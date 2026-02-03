@@ -1,7 +1,9 @@
 {{ define "main" }}
 <div id="books">
   <div class="books-list">
-    {{ range .Paginator.Pages }}
+    {{ $pages := where .Pages "Params.dateFinished" "!=" nil }}
+    {{ $sorted := sort $pages "Params.dateFinished" "date" "desc" }}
+    {{ range $sorted }}
       {{ partial "book-card.html" . }}
     {{ end }}
   </div>
